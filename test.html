@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #scrollable{
+            background-color: pink;
+            height: 5em;
+            overflow: scroll;
+        }
+        #overlay {
+          width: 512px;
+          
+          /* Cut off half the image at bottom. */
+          height: 256px;
+
+          /* Image size: 512x512 px */
+          background: url('./test.png');
+
+          /* This property is ignored in webkit. */
+          background-size: 512px 512px;
+
+          /* Setting background-repeat to repeat fixes the issue */
+          background-repeat: no-repeat;
+
+          /* Setting background-attachment to fixed or local always fixes the issue */
+          /* background-attachment: fixed; */
+
+          /* Translate logo to overlay two. This causes the bug. */
+          transform: translate(0px, 25px);
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay"></div>
+    <div id="scrollable">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat enim dignissimos beatae porro modi, saepe cum neque harum et, nulla repellat alias voluptas non explicabo quod atque quos tenetur facilis.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat enim dignissimos beatae porro modi, saepe cum neque harum et, nulla repellat alias voluptas non explicabo quod atque quos tenetur facilis.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat enim dignissimos beatae porro modi, saepe cum neque harum et, nulla repellat alias voluptas non explicabo quod atque quos tenetur facilis.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat enim dignissimos beatae porro modi, saepe cum neque harum et, nulla repellat alias voluptas non explicabo quod atque quos tenetur facilis.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat enim dignissimos beatae porro modi, saepe cum neque harum et, nulla repellat alias voluptas non explicabo quod atque quos tenetur facilis.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat enim dignissimos beatae porro modi, saepe cum neque harum et, nulla repellat alias voluptas non explicabo quod atque quos tenetur facilis.</p>
+    </div>
+    <p>Scroll pink area to test. Test fails if green image above changes.</p>
+</body>
+</html>
