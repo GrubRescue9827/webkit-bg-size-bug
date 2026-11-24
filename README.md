@@ -1,4 +1,7 @@
 # webkit-bg-size-bug
+> [!NOTE]
+> This bug appears to have been fixed as of Nov 2026.
+
 Repo to reproduce a WebKitGTK bug in which an element will render at the wrong scale (ignoring background-size) when translated over a scrolling element. This only occurs after scrolling said scrollable element, and hardware accelerated compositing is enabled.
 
 ## Testing
@@ -16,6 +19,7 @@ The following configurations have been tested:
 | GNOME Web 50.3 Fedora 44 WebkitGTK 2.52.3 Wayland        | _FAIL_                                          |
 | GNOME Web 46.5 Ubuntu 24.04 LTS WebkitGTK 2.50.4 Wayland | _FAIL_                                          |
 | GNOME Web 46.5 Ubuntu 24.04 LTS WebkitGTK 2.50.4 X11     | _FAIL_                                          |
+| GNOME Web 51.2 Fedora 45 WebKitGTK 2.54.2 Wayland        | PASS                                            | 
 | Various Webkit based browsers via Browserling            | inconclusive pass: Might be using SW rendering. |
 
 I do not have access to any modern Apple devices to test Safari unfortunately.
